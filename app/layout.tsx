@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     description:
       "Promote your brand, event or business to the UK Turkish community through BritishTurks Instagram advertising packages."
   },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "en-GB": "/",
+      "tr-TR": "/tr"
+    }
+  },
   metadataBase: new URL("https://britishturks.vercel.app")
 };
 
