@@ -63,7 +63,7 @@ export function LandingPage({ content }: { content: LandingPageContent }) {
     <main className="overflow-hidden text-white">
       <section className="premium-grid relative min-h-screen px-5 py-6 sm:px-8 lg:px-12">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,rgba(109,93,252,0.28),transparent_42rem)]" />
-        <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 rounded-full border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-xl sm:px-6">
+        <nav className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-3 backdrop-blur-xl sm:gap-4 sm:px-6">
           <a href={content.locale === "tr" ? "/tr" : "/"} className="flex items-center gap-3" aria-label="BritishTurks home">
             <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-black text-midnight">
               BT
@@ -84,7 +84,7 @@ export function LandingPage({ content }: { content: LandingPageContent }) {
               {content.nav.faq}
             </a>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 items-center gap-2">
             <a
               href={content.alternate.href}
               aria-label={content.alternate.ariaLabel}
@@ -96,46 +96,46 @@ export function LandingPage({ content }: { content: LandingPageContent }) {
           </div>
         </nav>
 
-        <div id="top" className="mx-auto grid max-w-7xl items-center gap-12 pb-14 pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24 lg:pt-24">
-          <div>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-sm font-semibold text-slate-200">
+        <div id="top" className="mx-auto grid w-full max-w-7xl items-center gap-12 pb-14 pt-16 lg:grid-cols-[1.05fr_0.95fr] lg:pb-24 lg:pt-24">
+          <div className="min-w-0">
+            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-left text-sm font-semibold leading-5 text-slate-200">
               <span className="h-2 w-2 rounded-full bg-gold shadow-[0_0_18px_rgba(247,201,107,0.8)]" />
-              {content.hero.eyebrow}
+              <span className="min-w-0 whitespace-normal">{content.hero.eyebrow}</span>
             </div>
-            <h1 className="max-w-5xl text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-5xl break-words text-4xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
               {content.hero.title}
             </h1>
-            <p className="mt-6 max-w-2xl text-xl font-semibold leading-8 text-slate-200 sm:text-2xl">
+            <p className="mt-6 max-w-2xl break-words text-xl font-semibold leading-8 text-slate-200 sm:text-2xl">
               {content.hero.subtitle}
             </p>
-            <p className="mt-5 max-w-2xl text-base leading-8 text-slate-300 sm:text-lg">
+            <p className="mt-5 max-w-2xl break-words text-base leading-8 text-slate-300 sm:text-lg">
               {content.hero.supportingText}
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <CtaButton>{content.hero.primaryCta}</CtaButton>
+            <div className="mt-9 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+              <CtaButton className="w-full sm:w-auto">{content.hero.primaryCta}</CtaButton>
               <a
                 href="#packages"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 text-sm font-bold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/10"
+                className="inline-flex min-h-12 w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 text-sm font-bold text-white transition duration-300 hover:-translate-y-0.5 hover:border-white/35 hover:bg-white/10 sm:w-auto"
               >
                 {content.hero.secondaryCta}
               </a>
             </div>
           </div>
 
-          <div className="glass-panel gradient-border rounded-[2rem] p-5 sm:p-7">
-            <div className="rounded-[1.5rem] border border-white/10 bg-ink/70 p-5 sm:p-6">
-              <div className="mb-6 flex items-center justify-between gap-4">
-                <div>
+          <div className="glass-panel gradient-border w-full min-w-0 rounded-[2rem] p-4 sm:p-7">
+            <div className="w-full min-w-0 rounded-[1.5rem] border border-white/10 bg-ink/70 p-5 sm:p-6">
+              <div className="mb-6 flex items-start justify-between gap-4">
+                <div className="min-w-0">
                   <p className="text-sm font-semibold text-slate-400">{content.hero.mediaKitLabel}</p>
-                  <h2 className="mt-1 text-2xl font-black">{content.hero.reachTitle}</h2>
+                  <h2 className="mt-1 break-words text-2xl font-black">{content.hero.reachTitle}</h2>
                 </div>
-                <span className="rounded-full bg-gold px-3 py-1 text-xs font-black uppercase tracking-wide text-midnight">
+                <span className="shrink-0 rounded-full bg-gold px-3 py-1 text-xs font-black uppercase tracking-wide text-midnight">
                   {content.hero.year}
                 </span>
               </div>
-              <div className="grid gap-3 sm:grid-cols-2">
+              <div className="grid min-w-0 gap-3 sm:grid-cols-2">
                 {content.insights.items.slice(0, 4).map((item) => (
-                  <div key={item.label} className="rounded-2xl border border-white/10 bg-white/[0.05] p-4">
+                  <div key={item.label} className="min-w-0 rounded-2xl border border-white/10 bg-white/[0.05] p-4">
                     <AnimatedStatValue
                       value={item.value}
                       suffix={item.suffix}
@@ -146,8 +146,8 @@ export function LandingPage({ content }: { content: LandingPageContent }) {
                   </div>
                 ))}
               </div>
-              <div className="mt-4 rounded-2xl bg-gradient-to-br from-royal/35 to-violet/25 p-4">
-                <div className="flex items-end justify-between gap-4">
+              <div className="mt-4 min-w-0 rounded-2xl bg-gradient-to-br from-royal/35 to-violet/25 p-4">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
                   <div>
                     <p className="text-sm font-semibold text-slate-200">{content.hero.reelsTitle}</p>
                     <AnimatedStatValue
@@ -157,11 +157,11 @@ export function LandingPage({ content }: { content: LandingPageContent }) {
                       className="mt-1 block text-4xl font-black"
                     />
                   </div>
-                  <div className="flex h-20 items-end gap-2">
+                  <div className="flex h-16 w-full items-end justify-end gap-2 sm:h-20 sm:w-auto">
                     {[38, 52, 46, 68, 84].map((height) => (
                       <span
                         key={height}
-                        className="w-6 rounded-t-full bg-white/80"
+                        className="w-5 rounded-t-full bg-white/80 sm:w-6"
                         style={{ height: `${height}%` }}
                       />
                     ))}
@@ -235,6 +235,34 @@ export function LandingPage({ content }: { content: LandingPageContent }) {
                 </div>
               </article>
             ))}
+          </div>
+          <div className="mt-5 rounded-3xl border border-white/10 bg-white/[0.045] p-6 sm:p-7">
+            <div className="grid gap-7 lg:grid-cols-2">
+              <div>
+                <h3 className="text-xl font-black tracking-tight text-white">{content.packages.addOns.title}</h3>
+                <ul className="mt-4 space-y-3">
+                  {content.packages.addOns.items.map((item) => (
+                    <li key={item} className="flex gap-3 text-sm leading-6 text-slate-300">
+                      <CheckMark />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-sm leading-6 text-slate-400">{content.packages.addOns.note}</p>
+              </div>
+              <div>
+                <h3 className="text-xl font-black tracking-tight text-white">
+                  {content.packages.addOns.flexibleTitle}
+                </h3>
+                <div className="mt-4 space-y-3">
+                  {content.packages.addOns.flexibleText.map((text) => (
+                    <p key={text} className="text-sm leading-6 text-slate-300">
+                      {text}
+                    </p>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
