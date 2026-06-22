@@ -29,6 +29,7 @@ npm run start
 ## Notes
 
 - All call-to-action buttons open the BritishTurks Instagram DM link in a new tab.
-- Insight numbers are managed from the `insights` array in `app/page.tsx` and animate when they enter the viewport.
+- Insight numbers are managed from `lib/siteContent.ts` and animate when they enter the viewport.
+- The website supports English at `/` and Turkish at `/tr`.
 - There is no Stripe checkout, payment page, backend or database.
 - Sponsored content disclosure and campaign result disclaimers are included on the page.
