@@ -29,5 +29,6 @@ npm run start
 ## Notes
 
 - All call-to-action buttons open the BritishTurks Instagram DM link in a new tab.
+- Insight numbers are managed from the `insights` array in `app/page.tsx` and animate when they enter the viewport.
 - There is no Stripe checkout, payment page, backend or database.
 - Sponsored content disclosure and campaign result disclaimers are included on the page.
